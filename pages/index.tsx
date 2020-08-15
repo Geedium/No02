@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 import Head from 'next/head'
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async () : Promise<any> => {
   const res = await fetch('http://localhost:3000/api/notes')
   const { data, success } = await res.json()
 
@@ -14,7 +14,7 @@ export const getServerSideProps = async () => {
   }
 }
 
-function App({data}) {
+export default function App({data}) : JSX.Element {
   return (<>
     <Head>
       <title>Index Page</title>
@@ -32,5 +32,3 @@ function App({data}) {
     </div>
   </>)
 }
-
-export default App

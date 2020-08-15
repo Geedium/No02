@@ -1,9 +1,10 @@
-import dbConnect from '../../../utils/dbConnect.js'
-import Note from '../../../models/Note.js'
+import { NextApiRequest, NextApiResponse } from 'next'
+import dbConnect from '@utils/database'
+import { Note } from '@models/Note'
 
 dbConnect()
 
-export default async(req, res) => {
+export default async(req: NextApiRequest, res: NextApiResponse) : Promise<void> => {
   const { method } = req
   
   switch(method) {
@@ -16,8 +17,8 @@ export default async(req, res) => {
       } break
       case 'POST':
         try {
-          const note = await Note.create(req.body)
-          res.status(201).json({ success:true, data: note })
+         // const note = await Note.create(req.body)
+         // res.status(201).json({ success:true, data: note })
         } catch(error) {
           res.status(400).json({ success: false, log: error.message })
         } break

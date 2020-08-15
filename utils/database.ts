@@ -1,19 +1,21 @@
 import * as mongoose from 'mongoose'
 
-const connection:any = {};
+type dBInfo = {
+    isConnected: boolean
+}
 
-async function dbConnect() {
-    if(connection.isConnected) {
-        return;
-    }
+const connection:dBInfo = {
+    isConnected: false
+}
 
-    const db:any = await mongoose.connect(process.env.MONGO_URL, {
+export default async function dbConnect() : Promise<any> {
+    if(connection.isConnected)
+        return
+
+    const db:mongoose.Mongoose = await mongoose.connect(process.env.MONGO_URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
 
-    connection.isConnected = db.connections[0].readyState
-    console.log(connection.isConnected)
+    connection.isConnected = !!db.connections[0].readyState
 }
-
-export default dbConnect;
