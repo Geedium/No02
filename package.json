@@ -12,7 +12,9 @@
     "mongoose": "^5.9.27",
     "next": "9.5.1",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^1.2.0"
   },
   "devDependencies": {
     "@types/mongoose": "^5.7.35",
