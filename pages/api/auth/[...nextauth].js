@@ -9,7 +9,7 @@ const options = {
             domain: process.env.AUTH0_DOMAIN
         })
     ],
-    database: "mongodb://[testUser:test123@]85.232.131.161[:27017]"
+    database: "mongodb://testUser:test123@85.232.131.161:27017/test?authSource=test"
 }
 
 export default(req, res) => NextAuth(req, res, options)
