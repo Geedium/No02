@@ -26,7 +26,7 @@ export default ({data}) : JSX.Element => {
     </Head>
 
     <div>
-      {session && <p>Signed in as {session.user.email}</p>}
+      {session && <p>Signed in as {session.user.email}<br/><a href="/api/auth/signout">Sign out</a></p>}
       {!session && <p><a href="/api/auth/signin">Sign in</a></p>}
 
       {data.map(note => {
