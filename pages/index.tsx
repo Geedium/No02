@@ -17,7 +17,7 @@ export const getServerSideProps = async () : Promise<any> => {
   }
 }
 
-export default ({data}) : JSX.Element => {
+const App = ({data}) : JSX.Element => {
   const [ session ] = useSession()
 
   return (<>
@@ -40,3 +40,5 @@ export default ({data}) : JSX.Element => {
     </div>
   </>)
 }
+
+export default App;
