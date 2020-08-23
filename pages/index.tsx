@@ -5,7 +5,7 @@ import Button from 'components/Button'
 import { signIn, useSession } from 'next-auth/client'
 
 export const getServerSideProps = async () : Promise<any> => {
-  const res = await fetch('http://localhost:3000/api/notes')
+  const res = await fetch(`${process.env.API_URL}/notes`)
   const { data, success } = await res.json()
 
   console.log(success)
