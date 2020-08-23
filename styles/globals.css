@@ -1,9 +1,0 @@
-body {
-    background: black !important;
-}
-
-body > :first-child {
-    height: inherit;
-    width: inherit;
-    margin: inherit;
-}

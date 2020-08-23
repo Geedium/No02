@@ -1,10 +1,14 @@
-import 'semantic-ui-css/semantic.min.css'
-import '../styles/globals.css'
+import 'styles/globals.sass'
 
 import type { AppProps } from 'next/app'
+import { Provider } from 'next-auth/client'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <Provider session={pageProps.session}>
+      <Component {...pageProps} />
+    </Provider>
+  )
 }
 
 export default MyApp

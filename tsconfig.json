@@ -22,11 +22,7 @@
     "resolveJsonModule": true,
     "removeComments": false,
     "isolatedModules": true,
-    "jsx": "preserve",
-    "paths": {
-      "@utils/*": ["./utils/*.ts"],
-      "@models/*": ["./models/*.ts"]
-    }
+    "jsx": "preserve"
   },
   "include": [
     "next-env.d.ts",

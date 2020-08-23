@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import dbConnect from '@utils/database'
-import { Note } from '@models/Note'
+import dbConnect from 'utils/database'
+import { Note } from 'models/Note'
 
 dbConnect()
 
