@@ -9,7 +9,7 @@ const options = {
             domain: process.env.AUTH0_DOMAIN
         })
     ],
-    database: process.env.MONGO_URL
+    database: "mongodb://85.232.131.161:27017/?retryWrites=true&w=majority"
 }
 
 export default(req, res) => NextAuth(req, res, options)
