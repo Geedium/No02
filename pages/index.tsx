@@ -5,7 +5,7 @@ import Button from 'components/Button'
 import { signIn, useSession } from 'next-auth/client'
 
 export const getServerSideProps = async () : Promise<any> => {
-  const res = await fetch(`${process.env.VERCEL_URL}/api/notes`)
+  const res = await fetch(`${process.env.URL_PREFIX}${process.env.VERCEL_URL}/api/notes`)
   const { data, success } = await res.json()
 
   console.log(`${process.env.VERCEL_URL}/api/notes`, success)
