@@ -5,17 +5,10 @@ import Button from 'components/Button'
 import { signIn, useSession } from 'next-auth/client'
 
 export const getServerSideProps = async () : Promise<any> => {
-  var apiURL = '';
-
-  if(process.env.VERCEL_URL != null) {
-    apiURL = process.env.VERCEL_URL + '/api/notes';
-  } else {
-    apiURL = 'http://85.232.131.161:3000/api/notes';
-  }
-  const res = await fetch(apiURL);
+  const res = await fetch(`${process.env.VERCEL_URL}/api/notes`)
   const { data, success } = await res.json()
 
-  console.log(success)
+  console.log(`${process.env.VERCEL_URL}/api/notes`, success)
 
   return {
     props: {
