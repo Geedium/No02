@@ -18,5 +18,4 @@ export default async function dbConnect() : Promise<any> {
     })
 
     connection.isConnected = !!db.connections[0].readyState
-    console.log('Connected: ', connection.isConnected)
 }
